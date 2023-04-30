@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/adminLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="container mt-3">
+                <a th:href="@{/administrator/employee/brand/create-brand}" class="btn btn-dark">Create</a>
+                <table class="table align-items-center mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Brand Name</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Website</th>
+                            <th class="text-secondary opacity-7">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="item : ${listBrand}">
+                        <tr>
+                            <td th:text="${item.brandName}">
+                            </td>
+                            <td th:text="${item.description}">
+                            </td>
+                            <td>
+                                <a href="" th:text="${item.website}" target="_blank"></a>
+                            </td>
+                            <td class="align-middle">
+                                <a th:href="@{/administrator/employee/brand/edit-brand/{id}(id = ${item.brandID})}" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a th:attr="data-id=${item.brandID}" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>

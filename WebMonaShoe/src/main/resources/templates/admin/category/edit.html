@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/adminLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="container">
+                <form method="post" th:object="${category}">
+                    <input type="hidden" th:field="*{categoryID}" />
+                    <div class="form-group">
+                        <label for="name">Category Name:</label>
+                        <input type="text" th:field="*{categoryName}" class="form-control" placeholder="Category Name"  id="name">
+                        <p th:errors="*{categoryName}"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="des">Category Description:</label>
+                        <input type="text" th:field="*{description}" class="form-control" placeholder="Category Description"  id="des">
+                        <p th:errors="*{description}"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

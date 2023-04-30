@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/clientLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="shop-page-title">
+                <div class="nav-category">
+                    <h3 class="nav-category-name"><a href="#">TRANG CHỦ</a> / GIÀY BÚP BÊ</h3>
+                </div>
+                <div class="product-dropdownlist">
+                    <label class="dropdown-name">Hiển thị 1-12 trong 20 kết quả&emsp;</label>
+                    <select id="sort-order" name="order">
+                        <option value="" selected>Thứ tự mặc định</option>
+                        <option value="">Thứ tự theo mức độ phổ biến</option>
+                        <option value="">Thứ tự theo điểm đánh giá</option>
+                        <option value="">Thứ tự mới nhất</option>
+                        <option value="">Theo giá: thấp đến cao</option>
+                        <option value="">Theo giá: cao xuống thấp</option>
+                    </select>
+                </div>
+            </div>
+            <section>
+                <div class="shop-container">
+                    <div class="shop-category-menu">
+                        <div class="product-category">
+                            <div class="category-item">
+                                <h3 class="product-category-name">DANH MỤC SẢN PHẨM</h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="category-item color-grey">
+                                        <a href="#">Giày búp bê</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="category-item">
+                                        <a href="#">Giày Sneaker</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="category-item color-grey">
+                                        <a href="#">Giày cao gót</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="category-item">
+                                        <a href="#">Giày xăng đan</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-left">
+                            <div class="product-left-title">
+                                <h3 class="product-left-name">SẢN PHẨM</h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="product-left-item color-grey">
+                                        <img src="/images/Product_Shop/P1.jpg" alt="" class="product-left-image">
+                                        <div class="product-left-name-price">
+                                            <a href="#">Giày Sophia Webster 01</a>
+                                            <div class="product-left-price-container">
+                                                <span class="product-left-price">1.350.000 VND</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-left-item">
+                                        <img src="/images/Product_Shop/P2.jpg" alt="" class="product-left-image">
+                                        <div class="product-left-name-price">
+                                            <a href="#"><span class="product-left-name">Giày cao gót Midnight...</span></a>
+                                            <div class="product-left-price-container">
+                                                <del class="old-price">990.000</del>
+                                                <span class="product-left-price"> 690.000 VND</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-left-item color-grey">
+                                        <img src="/images/Product_Shop/P3.jpg" alt="" class="product-left-image">
+                                        <div class="product-left-name-price">
+                                            <a href="#"><span class="product-left-name">Giày Saint Laurent</span></a>
+                                            <div class="product-left-price-container">
+                                                <del class="old-price">1.000.000</del>
+                                                <span class="product-left-price"> 850.000 VND</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-left-item">
+                                        <img src="/images/Product_Shop/p4.jpg" alt="" class="product-left-image">
+                                        <div class="product-left-name-price">
+                                            <a href="#"><span class="product-left-name">Giày cao gót Heels</span></a>
+                                            <div class="product-left-price-container">
+                                                <del class="old-price">700.000</del>
+                                                <span class="product-left-price"> 550.000 VND</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-left-item color-grey">
+                                        <img src="/images/Product_Shop/P5.jpg" alt="" class="product-left-image">
+                                        <div class="product-left-name-price">
+                                            <a href="#"><span class="product-left-name">Giày búp bê xu hướng</span></a>
+                                            <div class="product-left-price-contain">
+                                                <del class="old-price">350.000</del>
+                                                <span class="product-left-price"> 310.000 VND</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="shop-product-list">
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP1.jpg" alt="" class="shop-product-image">
+                            <div class="promotion-lable">-22%</div>
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày búp bê đế cuộn đính nơ</a>
+                                <div class="shop-product-price-contain">
+                                    <del style="color: grey;">250.000</del><span class="shop-product-price"> 195.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-brown" title="Nâu"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP2.jpg" alt="" class="shop-product-image">
+                            <div class="promotion-lable">-40%</div>
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày búp bê mũi nhọn đỏ...</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">299.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-red" title="Đỏ"></span></a>
+                                        <a href="#"><span class="product-color-pink" title="Hồng"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP3.jpg" alt="" class="shop-product-image">
+                            <div class="promotion-lable">-16%</div>
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày búp bê mũi nhọn đính</a>
+                                <div class="shop-product-price-contain">
+                                    <del style="color: grey;">350.000</del><span class="shop-product-price"> 290.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-pink" title="Hồng"></span></a>
+                                        <a href="#"><span class="product-color-grey" title="Xám"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP4.jpg" alt="" class="shop-product-image">
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày búp bê mũi tròn đính nơ</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">259.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP5.jpg" alt="" class="shop-product-image">
+                            <div class="promotion-lable">-22%</div>
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày búp bê xu hướng xám</a>
+                                <div class="shop-product-price-contain">
+                                    <del style="color: grey;">350.000</del><span class="shop-product-price"> 319.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-grey" title="Xám"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP6.jpg" alt="" class="shop-product-image">
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót 5cm mũi nhọn</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">390.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-brown" title="Nâu"></span></a>
+                                        <a href="#"><span class="product-color-grey" title="Xám"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP7.jpg" alt="" class="shop-product-image">
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót 5cm mũi nhọn</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">500.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-red" title="Đỏ"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP8.jpg" alt="" class="shop-product-image">
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót Ankle strap</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">430.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-red" title="Đỏ"></span></a>
+                                        <a href="#"><span class="product-color-pink" title="Hồng"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP9.jpg" alt="" class="shop-product-image">
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót dáng Kitten</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">410.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-brown" title="Nâu"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP10.jpg" alt="" class="shop-product-image">
+                            <div class="promotion-lable">-12%</div>
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót Heels Ralidien</a>
+                                <div class="shop-product-price-contain">
+                                    <del style="color: grey;">700.000</del><span class="shop-product-price"> 550.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-red" title="Đỏ"></span></a>
+                                        <a href="#"><span class="product-color-pink" title="Hồng"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP11.jpg" alt="" class="shop-product-image">
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót hoa cao sling</a>
+                                <div class="shop-product-price-contain">
+                                    <span class="shop-product-price">160.000 - 460.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-pink" title="Hồng"></span></a>
+                                        <a href="#"><span class="product-color-purple" title="Tím"></span></a>
+                                        <a href="#"><span class="product-color-green" title="Xanh lá"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-item">
+                            <img src="/images/Product_Shop/SP12.jpg" alt="" class="shop-product-image">
+                            <div class="promotion-lable">-2%</div>
+                            <div class="shop-product-information">
+                                <a href="#" class="shop-product-name">Giày cao gót Midnight Blac</a>
+                                <div class="shop-product-price-contain">
+                                    <del style="color: grey;">990.000</del><span class="shop-product-price"> 690.000 VND</span>
+                                    <ul class="shop-color-list">
+                                        <a href="#"><span class="product-color-black" title="Đen"></span></a>
+                                        <a href="#"><span class="product-color-red" title="Đỏ"></span></a>
+                                        <a href="#"><span class="product-color-brown" title="Nâu"></span></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paging-container">
+                            <a href="#"><span class="paging-number "><i class="fa fa-angle-left"></i></span></a>
+                            <a href="#"><span class="paging-number">1</span></a>
+                            <a href="#"><span class="paging-number">2</span></a>
+                            <a href="#"><span class="paging-number"><i class="fa fa-angle-right"></i></span></span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Logo -->
+            <section>
+                <div class="logo-section">
+                    <div class="logo-item">
+                        <img src="/images/Logo_Home/brand1.png" alt="" class="logo-image">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/images/Logo_Home/brand2.png" alt="" class="logo-image">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/images/Logo_Home/brand3.png" alt="" class="logo-image">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/images/Logo_Home/brand4.png" alt="" class="logo-image">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/images/Logo_Home/brand5.png" alt="" class="logo-image">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/images/Logo_Home/brand6.png" alt="" class="logo-image">
+                    </div>
+                </div>
+            </section>
+            <!-- End logo -->
+        </section>
+    </body>
+</html>

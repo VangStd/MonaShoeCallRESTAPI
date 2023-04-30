@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <title>Mona Shoes</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/responsive.css}">
+        <link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.min.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+              media="screen">
+        <link rel="shortcut icon" type="image/png" href="@{/icon/high-heels.png}">
+    </head>
+    <!-- Body -->
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="header_container">
+                <div class="header_address-login">
+                    <p class="header_address-content">Address: 60/29 Mậu Thân, An Hòa, Ninh Kiều, Cần Thơ</p>
+                    <a th:href="@{/login}" class="header_login-content" id="login-btn">Đăng nhập</a>
+                    <!-- Login and sign up modal -->
+                    <div id="login-modal" class="login-modal">
+                        <div class="login-modal-content">
+                            <span class="login-close">&times;</span>
+                            <div class="login-input-container">
+                                <!-- Login -->
+                                <div class="login-input-item" style="border-right: 1px solid #f1f1f1;">
+                                    <h3 class="form-input-title">ĐĂNG NHẬP</h3>
+                                    <label>Tên tài khoản hoặc địa chỉ email *</label>
+                                    <input type="text" name="name">
+                                    <label>Mật khẩu *</label>
+                                    <input type="text" name="name">
+                                    <label>
+                                        <input type="checkbox" name="remember-password">&nbsp;&nbsp;Ghi nhớ mật khẩu
+                                    </label><br>
+                                    <input type="button" name="button-login" value="ĐĂNG NHẬP"><br>
+                                    <a href="#" class="forget-pass">Quên mật khẩu?</a>
+                                </div>
+                                <!--Register  -->
+                                <div class="login-input-item">
+                                    <h3 class="form-input-title">ĐĂNG KÍ</h3>
+                                    <label>Địa chỉ email *</label>
+                                    <input type="text" name="name">
+                                    <label>Mật khẩu *</label>
+                                    <input type="text" name="name">
+                                    <input type="button" name="button-login" value="ĐĂNG KÍ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End login and sign up modal -->
+                </div>
+                <div class="header-main-container">
+                    <a href="Index.html"><img th:src="@{/images/logoShoes.png}" class="logo_main" width="200px"></a>
+                    <nav>
+                        <ul class="menu-area-main">
+                            <li><a th:href="@{/home}"><img th:src="@{/icon/trangchuIcon.png}">
+                                    <p>Trang chủ</p>
+                                </a></li>
+                            <li><a th:href="@{/about}"><img th:src="@{/icon/gioithieuIcon.png}">
+                                    <p>Giới thiệu</p>
+                                </a></li>
+                            <li><a th:href="@{/shop}"><img th:src="@{/icon/cuahangIcon.png}">
+                                    <p>Cửa hàng</p>
+                                </a>
+                                <ul class="submenu">
+                                    <li><a href="Shop.html">Giày búp bê</a></li>
+                                    <li><a href="Shop.html">Giày cao gót</a></li>
+                                    <li><a href="Shop.html">Giày xăng đan</a></li>
+                                    <li><a href="Shop.html">Giày Sneaker</a></li>
+                                </ul>
+                            </li>
+                            <li><a th:href="@{/new}"><img th:src="@{/icon/tintucIcon.png}">
+                                    <p>Tin tức</p>
+                                </a></li>
+                            <li><a th:href="@{/contact}"><img th:src="@{/icon/lienheIcon.png}">
+                                    <p>Liên hệ</p>
+                                </a></li>
+                            <li><a th:href="@{/map}"><img th:src="@{/icon/chiduongIcon.png}">
+                                    <p>Chỉ đường</p>
+                                </a></li>
+                        </ul>
+                    </nav>
+                    <ul class="header-search-cart">
+                        <li class="header-search"><a href="#" id="search-btn"><i class="fa fa-search"></i></a></li>
+                        <div id="search-modal" class="search-modal">
+                            <div class="search-modal-content">
+                                <span class="search-close">&times;</span>
+                                <div class="search-input-container">
+                                    <input type="text" placeholder="Tìm kiếm..." class="input-search">
+                                    <button type="button" class="button-search"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="header-cart"><a href="Empty_Cart.html">Giỏ hàng&nbsp;&nbsp;<i
+                                    class="fa fa-shopping-bag"></i></a>
+                            <div class="not-product-message">
+                                <p class="message">Chưa có sản phẩm trong giỏ hàng</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+        <section layout:fragment="content">
+
+        </section>
+        <!--  Footer -->
+        <footer>
+            <div class="footer-main">
+                <div class="footer-item">
+                    <h5 class="footer-item-title">LIÊN HỆ</h5>
+                    <ul>
+                        <li>
+                            <p>Chúng tôi chuyên cung cấp các sản phẩm chính hãng chất lượng tốt
+                                đạt chuẩn quốc tế</p>
+                        </li>
+                        <li><i class="fa fa-home"></i>&nbsp;<a href="#" class="footer-item-address">316 C19 Lý Thường Kiệt,
+                                P.15,
+                                Q.11, TP. HCM</a></li>
+                        <li><i class="fa fa-phone"></i>&nbsp;<a href="#" class="footer-item-address">1900 636 648</a></li>
+                        <li><i class="fa fa-book"></i>&nbsp;<a href="#" class="footer-item-address">mona@mona.media</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h5 class="footer-item-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul>
+                        <li><a href="#" class="footer-item-address">Tài khoản</a></li>
+                        <li><a href="#" class="footer-item-address">Giỏ hàng</a></li>
+                        <li><a href="#" class="footer-item-address">Thanh toán</a></li>
+                        <li><a href="#" class="footer-item-address">Kiểm tra đơn hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h5 class="footer-item-title">DANH SÁCH MENU</h5>
+                    <ul>
+                        <li><a href="#" class="footer-item-address">Trang chủ</a></li>
+                        <li><a href="#" class="footer-item-address">Giới thiệu</a></li>
+                        <li><a href="#" class="footer-item-address">Tin tức</a></li>
+                        <li><a href="#" class="footer-item-address">Cửa hàng</a></li>
+                        <li><a href="#" class="footer-item-address">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h5 class="footer-item-title">KẾT NỐI VỚI MONA</h5>
+                    <ul>
+                        <li><a href="#" class="footer-item-address">Trang chủ</a></li>
+                        <li><a href="#" class="footer-item-address">Giới thiệu</a></li>
+                        <li><a href="#" class="footer-item-address">Tin tức</a></li>
+                        <li><a href="#" class="footer-item-address">Cửa hàng</a></li>
+                        <li><a href="#" class="footer-item-address">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <h5 class="designer"> &copy; 2023 My Website</h5>
+            </div>
+        </footer>
+        <!-- End footer -->
+        <!-- Javascript files-->
+        <script th:src="@{/js/jquery.min.js}"></script>
+        <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/js/script.js}"></script>
+    </body>
+
+</html>

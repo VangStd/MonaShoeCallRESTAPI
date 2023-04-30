@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/adminLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="container mt-3">
+                <a th:href="@{/administrator/employee/category/create-category}" class="btn btn-dark">Create</a>
+                <table class="table table-hover" id="table1">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category Name</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="item : ${listCate}">
+                        <tr>
+                            <td th:text="${item.categoryName}">
+                            </td>
+                            <td th:text="${item.description}">
+                            </td>
+                            <td class="align-middle">
+                                <a th:href="@{/administrator/employee/category/edit-category/{id}(id = ${item.categoryID})}" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a th:attr="data-id=${item.categoryID}" class="btn btn-dark category__a__deleteCategory" style="background-color: #e91e63; text-transform: none;">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>

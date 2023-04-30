@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/clientLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="shop-detail-container">
+                <div class="shop-category-menu">
+                    <div class="category-item-news">
+                        <input type="text" class="search-news" placeholder="Tìm kiếm...">
+                        <button class="button-search-news" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                    <div class="product-left">
+                        <div class="news-left-title">
+                            <h3 class="news-left-name">BÀI VIẾT MỚI</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="news-left-item color-grey">
+                                    <img src="/images/News/BV1.jpg" alt="" class="news-left-image">
+                                    <div class="news-left-name-price">
+                                        <a href="#"><span class="news-left-name">Lý do những đôi giày cao gót
+                                                Christiaon...</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news-left-item">
+                                    <img src="/images/News/BV2.jpeg" alt="" class="news-left-image">
+                                    <div class="news-left-name-price">
+                                        <a href="#"><span class="news-left-name">Lộ điện đôi giày cao gót đắt nhất thế giới
+                                                có giá...</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news-left-item color-grey">
+                                    <img src="/images/News/BV4.jpeg" alt="" class="news-left-image">
+                                    <div class="news-left-name-price">
+                                        <a href="#"><span class="news-left-name">Những mẫu giày mới nhất trong năm
+                                                này...</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news-left-item">
+                                    <img src="/images/News/BV1.jpg" alt="" class="news-left-image">
+                                    <div class="news-left-name-price">
+                                        <a href="#"><span class="news-left-name">Có gì đặc biệt ở đôi giày vàng, đính kim
+                                                cương</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="posts-detail-container">
+                    <a href="#" class="posts-type">TIN TỨC</a>
+                    <h1 class="post-title">Lý do những đôi giày cao gót Christiaon Luboutin lại có đế màu đỏ độc nhất vô nhị
+                    </h1>
+                    <p class="posts-time">POSTED ON 7 THÁNG NĂM, 2019 BY MONA</p>
+                    <p class="posts-content">Khi bạn hỏi một cô gái đam mê thời trang rằng đâu là những món đồ hiệu mà cô ấy
+                        ao ước được sở hữu, danh sách này chắc chắn sẽ có tên giày cao gót Christian Louboutin. Với phần gót
+                        cao vút sexy tuyệt đối và đặc biệt là màu đế đỏ rực đặc trưng, giày cao gót Christian Louboutin từ
+                        lâu đã là một biểu tượng của sự sang chảnh đầy đẳng cấp mà bất cứ tín đồ hàng hiệu nào cũng muốn
+                        được xỏ chân vào.</p>
+                    <img src="/images/posts-details.webp" alt="" class="posts-details-image" width="100%">
+                    <p class="posts-content">Chắc hẳn chẳng ai còn xa lạ gì màu đế đỏ đặc trưng của giày Christian
+                        Louboutin, nhưng tại sao lại là màu đỏ? Nguồn gốc của màu đế rực rỡ sexy này đến từ đâu? Nguồn cảm
+                        hứng nào đã khiến quý ngài Christian Louboutin chọn màu sơn đỏ cho những tuyệt tác của mình? Câu trả
+                        lời thực sự sẽ khiến nhiều người phải bất ngờ.</p>
+                    <img src="/images/posts-details1.webp" alt="" class="posts-details-image" width="100%">
+                    <p class="posts-content">Trong cuốn sách mang tên Rizzoli của mình, Christian Louboutin đã hé lộ bí ẩn
+                        đằng sau màu đế đỏ độc nhất vô nhị. Ít ai biết được rằng thứ nguyên liệu đầu tiên mà ông dùng để sơn
+                        cho đế giày chính là… sơn móng tay. Câu chuyện bắt đầu vào một ngày nọ khoảng gần 30 năm trước, khi
+                        đang ngồi nhìn những đôi giày với màu đế đen nhàm chán, Christian Louboutin bỗng để mắt đến chai sơn
+                        móng tay màu đỏ của người trợ lý và nảy ra ý định dùng nó sơn thử lên đế giày cho vui.</p>
+                    <img src="/images/posts-details2.webp" alt="" class="posts-details-image" width="100%">
+                    <p class="posts-content">Trong một lần rảnh rỗi, quý ngài Christian Louboutin đã dùng sơn móng tay màu
+                        đỏ để tô màu cho đế giày đen nhàm chán và yêu thích thành quả tới mức ấn định đỏ là màu sắc đặc
+                        trưng cho đế giày của mình.</p>
+                    <div class="social-media-button">
+                        <button class="button-social-facebook" type="button"><i
+                                class="fa fa-facebook">&nbsp;Facebook</i></button>
+                        <button class="button-social-twitter" type="button"><i
+                                class="fa fa-twitter"></i>&nbsp;Twitter</button>
+                        <button class="button-social-google" type="button"><i class="fa fa-google"></i>&nbsp;Google</button>
+                        <button class="button-social-pinterest" type="button"><i
+                                class="fa fa-pinterest"></i>&nbsp;Pinterest</button>
+                        <button class="button-social-link" type="button"><i
+                                class="fa fa-shopping-bag"></i>&nbsp;Linkedln</button>
+                    </div>
+                    <div class="posts-relate">
+                        <p class="posts-relate-content"><i class="fa fa-angle-left" style="font-size: 20px;"></i><a
+                                href="#">&nbsp;&nbsp;Lộ diện đôi giày cao gót đắt nhất thế giới có giá 750 triệu đồng...</a>
+                        </p>
+                    </div>
+                    <div class="feedback-container">
+                        <h3 class="feedback-title">Trả lời</h3>
+                        <p class="feedback-message">Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc được
+                            đánh dấu *</p>
+                        <label class="label-feedback">Bình luận</label><br>
+                        <textarea name="comment" class="textarea-feedback" rows="5"></textarea>
+                        <div class="input-container">
+                            <label class="label-feedback">Tên*</label>
+                            <input type="text" name="name" class="input-feedback">
+                            <label class="label-feedback">Email*</label>
+                            <input type="email" name="email" class="input-feedback">
+                            <label class="label-feedback">Trang web*</label>
+                            <input type="page" name="page" class="input-feedback">
+                        </div>
+                        <input type="button" value="PHẢN HỒI" name="feedback">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logo -->
+        <section>
+            <div class="logo-section">
+                <div class="logo-item">
+                    <img src="/images/Logo_Home/brand1.png" alt="" class="logo-image">
+                </div>
+                <div class="logo-item">
+                    <img src="/images/Logo_Home/brand2.png" alt="" class="logo-image">
+                </div>
+                <div class="logo-item">
+                    <img src="/images/Logo_Home/brand3.png" alt="" class="logo-image">
+                </div>
+                <div class="logo-item">
+                    <img src="/images/Logo_Home/brand4.png" alt="" class="logo-image">
+                </div>
+                <div class="logo-item">
+                    <img src="/images/Logo_Home/brand5.png" alt="" class="logo-image">
+                </div>
+                <div class="logo-item">
+                    <img src="/images/Logo_Home/brand6.png" alt="" class="logo-image">
+                </div>
+            </div>
+        </section>
+        <!-- End logo -->
+    </body>
+</html>

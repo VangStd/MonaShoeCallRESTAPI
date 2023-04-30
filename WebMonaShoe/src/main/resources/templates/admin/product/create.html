@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/adminLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="container">
+                <form method="post" th:object="${product}" class="row g-3" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Product Name:</label>
+                        <input type="text" th:field="*{productName}" class="form-control" placeholder="Category Name"  id="name">
+                        <p th:errors="*{productName}"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Category:</label>
+                        <select th:field="*{categoryID.categoryID}" class="form-select">
+                            <option th:each="cate : ${listCate}" th:value="${cate.categoryID}" th:text="${cate.categoryName}" />
+                        </select>
+                    </div> 
+                    <div class="form-group">
+                        <label for="name">Brand:</label>
+                        <select th:field="*{brandID.brandID}" class="form-select">
+                            <option th:each="brand : ${listBrand}" th:value="${brand.brandID}" th:text="${brand.brandName}" />
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Supplier:</label>
+                        <select th:field="*{supplierID.supplierID}" class="form-select">
+                            <option th:each="supplier : ${listSup}" th:value="${supplier.supplierID}" th:text="${supplier.companyName}" />
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="des">Product Description:</label>
+                        <input type="text" th:field="*{description}" class="form-control" placeholder="Description"  id="des">
+                        <p th:errors="*{description}"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="des">Unit Price:</label>
+                        <input type="number" th:field="*{unitPrice}" class="form-control" placeholder="Unit Price"  id="des">
+                        <p th:errors="*{unitPrice}"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="des">Quantity:</label>
+                        <input type="number" th:field="*{quantity}" class="form-control" placeholder="Unit Price"  id="des">
+                        <p th:errors="*{quantity}"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="des">Image</label>
+                        <input type="file" name="img" class="form-control" />
+                    </div>
+                    <div class="col-10">
+                        <button type="submit" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">Create</button>
+                        <button type="submit" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">Back</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

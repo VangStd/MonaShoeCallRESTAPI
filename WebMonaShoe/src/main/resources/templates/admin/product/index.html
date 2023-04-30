@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/adminLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="container mt-3">
+                <a th:href="@{/administrator/employee/product/create-product}" class="btn btn-dark">Create</a>
+                <table class="table table-hover" id="table1">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Brand</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Supplier</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Unit Price</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Quantity</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sales</th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="item : ${listProduct}">
+                        <tr>
+                            <td th:text="${item.productName}">
+                            </td>
+                            <td th:text="${item.categoryID.categoryName}">
+                            </td>
+                            <td th:text="${item.brandID.brandName}">
+                            </td>
+                            <td th:text="${item.supplierID.companyName}">
+                            </td>    
+                            <td >
+                                <img th:src="${item.image}" width="100px" class="img-thumbnail" alt="alt"/>
+                            </td>   
+                            <td th:text="${item.unitPrice}">
+                            </td>   
+                            <td th:text="${item.quantity}">
+                            </td>  
+                            <td th:text="${item.promotionStatus}">
+                            </td>
+                            <td class="align-middle">
+                                <a th:href="@{/administrator/employee/product/edit-product/{id}(id = ${item.productID})}" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a th:attr="data-id=${item.productID}" class="btn btn-dark product__a__deleteProduct" style="background-color: #e91e63; text-transform: none;">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/clientLayout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="login_container">
+                <div class="login_form">
+                    <h2 class="login-title">Login Here</h2>
+                    <div class="text-container">
+                        <label>Doesn't have an account yet?&nbsp;</label>
+                        <a th:href="@{/register}">Sign Up</a>
+                    </div>
+                    <form th:action="@{/login-process}" method="post" >
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="text" placeholder="username" class="form-control" name="username" id="email">
+                            <small id="sign_error" style="color: red;"></small>
+                            <div class="text-container">
+                                <label for="password">Password&nbsp;</label>
+                            </div>
+                            <input type="password" placeholder="Enter 6 character or more" name="password" class="form-control" minlength="6"
+                                   id="pass">
+                            <small id="pass_error" style="color: red;"></small><br>
+                            <div class="spinner"></div>
+                            <input type="checkbox" name="remember"><label for="remember">&emsp;Remember me</label>
+                        </div>
+                    </form>
+                    <button type="button" class="login-button" id="form_sign" onclick="validationForm();">Login</button>
+                    <div class="line-container">
+                        <hr>
+                        <p class="loginwith">&emsp;&emsp;or login with</p>
+                        <hr>
+                    </div>
+                    <div class="social_network">
+                        <button type="submit" name="login" class="btn-outline-danger">
+                            <img src="/images/google.png">&nbsp;Google
+                        </button>
+                        <button type="submit" name="login" class="btn-outline-primary">
+                            <img src="/images/facebook.png">&nbsp;
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <div class="login_image">
+                    <img src="/images/image.png" alt="Image_Login">
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
