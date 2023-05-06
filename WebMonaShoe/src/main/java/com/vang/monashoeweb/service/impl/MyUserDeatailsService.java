@@ -21,6 +21,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -30,10 +31,13 @@ import org.springframework.web.client.RestTemplate;
  */
 @Service
 public class MyUserDeatailsService implements UserDetailsService {
-
+    
     @Autowired
     private RestTemplate restTemplate;
-
+    
+//    @Autowired
+//    private BCryptPasswordEncoder passwordEncoder;
+//    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Accounts login = new Accounts();
@@ -44,10 +48,11 @@ public class MyUserDeatailsService implements UserDetailsService {
         UserDetails userDetails = new User(accounts.getUsername(), accounts.getPassword(), list);
         return userDetails;
     }
-
+    
     private Accounts login(Accounts acc) {
         Accounts accounts = new Accounts();
         try {
+          //  System.out.println("-->" + passwordEncoder.encode("vangadmin"));
             String url = "http://localhost:1602/api/login/";
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
@@ -61,5 +66,5 @@ public class MyUserDeatailsService implements UserDetailsService {
         }
         return accounts;
     }
-
+    
 }

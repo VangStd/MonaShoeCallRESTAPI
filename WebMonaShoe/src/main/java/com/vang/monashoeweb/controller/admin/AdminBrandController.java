@@ -7,7 +7,9 @@ package com.vang.monashoeweb.controller.admin;
 import com.vang.monashoeweb.dto.Brands;
 import com.vang.monashoeweb.service.BrandService;
 import jakarta.validation.Valid;
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,8 +27,12 @@ public class AdminBrandController {
     @Autowired
     private BrandService brandService;
 
+    @Secured(value = "ROLE_ADMIN")
     @GetMapping("index-brand")
-    public String indexBrand(Model model) {
+    public String indexBrand(Model model, Principal principal) {
+        if (principal != null) {
+            System.out.println("=====" + principal.getName());
+        }
         return brandService.indexBrand(model);
     }
 

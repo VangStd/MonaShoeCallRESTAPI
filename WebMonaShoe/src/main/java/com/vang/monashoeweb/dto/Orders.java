@@ -26,7 +26,6 @@ public class Orders implements Serializable {
     private String note;
     private int status;
     private Accounts accounts;
-    private Accounts accounts1;
     private List<OrderDetails> orderDetailsList;
 
 }

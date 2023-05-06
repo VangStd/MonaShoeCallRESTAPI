@@ -6,6 +6,7 @@ package com.vang.monashoeweb.controller;
 
 import java.security.Principal;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SecurityController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/login1")
     public String login() {
         return "client/login";
     }
@@ -24,4 +25,10 @@ public class SecurityController {
     public String loginSuccess(Principal principal) {
         return "redirect:/home";
     }
+
+    @GetMapping("/logout-success")
+    public String logout() {
+        return "redirect:/home";
+    }
+
 }

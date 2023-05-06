@@ -56,6 +56,10 @@ public class CategorySerivceimpl implements CategoryService {
 
     @Override
     public String createCategory(Categories categories, BindingResult br, Model model) {
+        if (br.hasErrors()) {
+            model.addAttribute("category", categories);
+            return "admin/category/create";
+        }
         String url = "http://localhost:1602/api/administrator/employee/category/";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<Categories> request = new HttpEntity<>(categories, headers);

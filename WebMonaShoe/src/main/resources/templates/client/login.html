@@ -13,7 +13,7 @@
                         <label>Doesn't have an account yet?&nbsp;</label>
                         <a th:href="@{/register}">Sign Up</a>
                     </div>
-                    <form th:action="@{/login-process}" method="post" >
+                    <form action="/login-proc" method="post" >
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="text" placeholder="username" class="form-control" name="username" id="email">
@@ -27,8 +27,8 @@
                             <div class="spinner"></div>
                             <input type="checkbox" name="remember"><label for="remember">&emsp;Remember me</label>
                         </div>
+                        <button type="submit" class="login-button" id="form_sign" >Login</button>
                     </form>
-                    <button type="button" class="login-button" id="form_sign" onclick="validationForm();">Login</button>
                     <div class="line-container">
                         <hr>
                         <p class="loginwith">&emsp;&emsp;or login with</p>

@@ -1,0 +1,12 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:object": {},
+        "th:field": {
+            "context": "input"
+        },
+        "layout:fragment": {
+            "context": "section"
+        }
+    }
+}

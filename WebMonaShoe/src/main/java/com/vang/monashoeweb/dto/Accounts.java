@@ -5,7 +5,7 @@
 package com.vang.monashoeweb.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import lombok.Data;
 
@@ -25,6 +25,5 @@ public class Accounts implements Serializable {
     private Date dateCreate;
     private String status;
     private List<Orders> ordersList;
-    private List<Orders> ordersList1;
-
+    private List<AccountConfig> accountConfigList;
 }

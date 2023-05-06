@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/adminLayout.html}">
+    <head>
+
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="container">
+                <div class="row">
+                    <form method="post" th:object="${account}" class="row g-3">
+                        <div class="col-10">
+                            <label for="name">User Name</label>
+                            <input type="text" th:field="*{accountID.username}" required="true" class="form-control" placeholder="Username Name"  id="name">
+                            <p th:text="${errUsername}"></p>
+                        </div>
+                        <div class="col-10">
+                            <label for="web">Password</label>
+                            <input type="password" th:field="*{accountID.password}" required="true" class="form-control" placeholder="********"  id="web">
+                            <p th:errors="*{accountID.password}"></p>
+                        </div>
+                        <div class="col-10">
+                            <label for="des">Full name</label>
+                            <input type="text" th:field="*{fullName}" required="true" class="form-control" placeholder="Full Name"  id="des">
+                            <p th:errors="*{fullName}"></p>
+                        </div>
+
+                        <div class="col-10">
+                            <label for="web">Email</label>
+                            <input type="email" th:field="*{accountID.email}" required="true" class="form-control" placeholder="Email"  id="web">
+                            <p th:text="${errEmail}"></p>
+                        </div>
+                        <div class="col-10">
+                            <button type="submit" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">Create</button>
+                            <button type="submit" class="btn btn-dark" style="background-color: #e91e63; text-transform: none;">Back</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
