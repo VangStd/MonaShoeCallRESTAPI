@@ -94,7 +94,15 @@
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="material-icons opacity-10">table_view</i>
                             </div>
-                            <span class="nav-link-text ms-1">Customer</span>
+                            <span class="nav-link-text ms-1">Customers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white " th:href="@{/administrator/employee/staff/index-staff}">
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="material-icons opacity-10">table_view</i>
+                            </div>
+                            <span class="nav-link-text ms-1">Employees</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -410,6 +418,7 @@
         <script th:src="@{/assets/js/jscustom/js-controller-category.js}"></script>
         <script th:src="@{/assets/js/jscustom/js-controller-supplier.js}"></script>
         <script th:src="@{/assets/js/jscustom/js-controller-product.js}"></script>
+        <script th:src="@{/assets/js/jscustom/js-controller-customer.js}"></script>
         <script>
                                 var ctx = document.getElementById("chart-bars").getContext("2d");
 

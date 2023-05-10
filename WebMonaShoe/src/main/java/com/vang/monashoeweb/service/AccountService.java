@@ -26,8 +26,14 @@ public interface AccountService {
     String editCustomer(Model model, int id);
 
     @Transactional
-    String editCustomer(AccountConfig accountConfig, BindingResult br, Model model,HttpServletRequest request, int id);
+    String editCustomer(AccountConfig accountConfig, BindingResult br, Model model, HttpServletRequest request, int id);
 
     String deleteAccount(int id);
 
+    String indexEmployee(Model model);
+
+    String createEmployee(Model model);
+
+    @Transactional
+    String createEmployee(AccountConfig accountConfig, BindingResult br, Model model);
 }

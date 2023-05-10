@@ -52,8 +52,5 @@ public class HomeController {
         return "client/map";
     }
 
-    @GetMapping("/register")
-    public String register() {
-        return "client/register";
-    }
+
 }

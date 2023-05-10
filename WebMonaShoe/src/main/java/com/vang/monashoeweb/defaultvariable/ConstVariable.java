@@ -16,6 +16,7 @@ public class ConstVariable {
     public static final String STATUS_ENABLE = "1";
     public static final String STATUS_DISABLE = "0";
     public static final String ROLE_CUSTOMER = "ROLE_CUSTOMER";
+    public static final String ROLE_EMPLOYEE = "ROLE_EMPLOYEE";
     public static final Date TODAY = Date.valueOf(LocalDate.now());
 
 }

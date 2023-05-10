@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -52,6 +53,11 @@ public class AdminCustomerController {
     @PostMapping("edit-customer/{id}")
     public String editCustomer(@ModelAttribute("customer") @Valid AccountConfig accountConfig, BindingResult br, Model model, HttpServletRequest request, @PathVariable("id") int id) {
         return accountService.editCustomer(accountConfig, br, model, request, id);
+    }
+
+    @PostMapping("delete-customer")
+    public String deleteCustomer(@RequestParam("customerID") int id) {
+        return accountService.deleteAccount(id);
     }
 
 }

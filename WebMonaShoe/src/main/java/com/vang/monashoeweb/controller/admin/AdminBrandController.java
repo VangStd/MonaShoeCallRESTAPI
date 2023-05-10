@@ -27,7 +27,7 @@ public class AdminBrandController {
     @Autowired
     private BrandService brandService;
 
-    @Secured(value = "ROLE_ADMIN")
+    @Secured(value = "ROLE_EMPLOYEE")
     @GetMapping("index-brand")
     public String indexBrand(Model model, Principal principal) {
         if (principal != null) {

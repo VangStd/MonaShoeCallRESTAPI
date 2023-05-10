@@ -142,12 +142,84 @@ public class AccountServiceimpl implements AccountService {
             ResponseEntity<String> response1 = restTemplate.exchange(url1, HttpMethod.PUT, request1, String.class);
         } catch (Exception e) {
         }
-        return "redirect:/administrator/employee/customer/index-customer";
+        if (accountConfig.getAccountID().getRoles().contains("EMPLOYEE")) {
+            return "redirect:/administrator/employee/staff/index-staff";
+        } else {
+            return "redirect:/administrator/employee/customer/index-customer";
+        }
     }
 
     @Override
     public String deleteAccount(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String url = "http://localhost:1602/api/administrator/employee/account/" + id + "/";
+            HttpEntity<String> request = new HttpEntity<>(headers);
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.DELETE, request, String.class);
+        } catch (Exception e) {
+        }
+        return "redirect:/administrator/employee/customer/index-customer";
+    }
+
+    @Override
+    public String indexEmployee(Model model) {
+        try {
+            String url = "http://localhost:1602/api/administrator/employee/account/";
+            HttpEntity<String> request = new HttpEntity<>(headers);
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, request, String.class);
+            List<AccountConfig> listCustomer = objectMapper.readValue(response.getBody(), new TypeReference<List<AccountConfig>>() {
+            });
+            model.addAttribute("listCustomer", listCustomer);
+        } catch (Exception e) {
+        }
+        return "admin/staff/index";
+    }
+
+    @Override
+    public String createEmployee(Model model) {
+        AccountConfig account = new AccountConfig();
+        model.addAttribute("employee", account);
+        return "admin/staff/create";
+    }
+
+    @Override
+    public String createEmployee(AccountConfig accountConfig, BindingResult br, Model model) {
+        int statusCheckExist = 0;
+        if (br.hasErrors()) {
+            model.addAttribute("employee", accountConfig);
+            return "admin/staff/create";
+        }
+        long checkUsername = checkUsernameExist(accountConfig.getAccountID().getUsername());
+        long checkEmail = checkEmailExist(accountConfig.getAccountID().getEmail());
+        if (checkUsername > 0) {
+            model.addAttribute("errUsername", "Username exist !");
+            statusCheckExist++;
+        }
+        if (checkEmail > 0) {
+            model.addAttribute("errEmail", "Email exist !");
+            statusCheckExist++;
+        }
+        if (statusCheckExist > 0) {
+            model.addAttribute("employee", accountConfig);
+            return "admin/staff/create";
+        }
+        try {
+            Accounts account = accountConfig.getAccountID();
+            account.setPassword(passwordEncoder.encode(account.getPassword()));
+            account.setRoles(ConstVariable.ROLE_EMPLOYEE);
+            account.setStatus(ConstVariable.STATUS_ENABLE);
+            account.setDateCreate(ConstVariable.TODAY);
+            String url = "http://localhost:1602/api/administrator/employee/account/";
+            HttpEntity<Accounts> request = new HttpEntity<>(account, headers);
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, request, String.class);
+            Accounts acc = objectMapper.readValue(response.getBody(), new TypeReference<Accounts>() {
+            });
+            accountConfig.setAccountID(acc);
+            String url1 = "http://localhost:1602/api/administrator/employee/account-config/";
+            HttpEntity<AccountConfig> request1 = new HttpEntity<>(accountConfig, headers);
+            ResponseEntity<String> response1 = restTemplate.exchange(url1, HttpMethod.POST, request1, String.class);
+        } catch (Exception e) {
+        }
+        return "redirect:/administrator/employee/staff/index-staff";
     }
 
     private long checkUsernameExist(String username) {

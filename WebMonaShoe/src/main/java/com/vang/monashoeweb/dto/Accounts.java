@@ -4,6 +4,7 @@
  */
 package com.vang.monashoeweb.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
@@ -26,4 +27,7 @@ public class Accounts implements Serializable {
     private String status;
     private List<Orders> ordersList;
     private List<AccountConfig> accountConfigList;
+
+    @JsonIgnore
+    private String confirmNewPass;
 }

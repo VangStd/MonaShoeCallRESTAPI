@@ -13,41 +13,34 @@
                         <label>Do not have an account?&nbsp;</label>
                         <a href="/Login.html">Login</a>
                     </div>
-                    <form>
+                    <form method="post" action="" th:object="${customer}">
                         <div class="form-group">
                             <label for="fullname">Full Name</label>
-                            <input type="fullname" placeholder="Enter fullname" class="form-control" id="fullname" required>
+                            <input type="text" placeholder="Enter fullname" th:field="*{fullName}" class="form-control" id="fullname" required>
                             <label for="address">Address</label>
-                            <input type="address" placeholder="Enter address" class="form-control" id="address" required>
+                            <input type="text" placeholder="Enter address" th:field="*{address}" class="form-control" id="address" required>
                             <label for="phone">Phone Number</label>
-                            <input type="phone" placeholder="Enter phone number" class="form-control" id="phone" required>
+                            <input type="tel" placeholder="Enter phone number" th:field="*{phone}" class="form-control" id="phone" required>
                             <label for="email">Email Address</label>
-                            <input type="email" placeholder="you@example.com" class="form-control" id="email">
+                            <input type="email" placeholder="you@example.com" th:field="*{accountID.email}" class="form-control" id="email">
                             <small id="sign_error" style="color: red;"></small>
+                            <label for="fullname">User Name</label>
+                            <input type="text" placeholder="Enter username" th:field="*{accountID.username}" class="form-control" id="username" required>
                             <div class="text-container">
                                 <label for="password">Password&nbsp;</label>
                             </div>
-                            <input type="password" placeholder="Enter 6 character or more" class="form-control" minlength="6"
+                            <input type="password" placeholder="Enter 6 character or more" th:field="*{accountID.password}" class="form-control" minlength="6"
                                    id="pass">
                             <small id="pass_error" style="color: red;"></small><br>
-                            <input type="checkbox" name="remember"><label for="remember">&emsp;Remember me</label>
+                            <div class="text-container">
+                                <label for="password">Confirm Password&nbsp;</label>
+                            </div>
+                            <input type="password" placeholder="Enter 6 character or more" th:field="*{accountID.confirmNewPass}" class="form-control" minlength="6"
+                                   id="pass">
+                            <small id="pass_error" th:text="${}" style="color: red;"></small><br>
                         </div>
+                        <button type="submit" class="login-button" id="form_sign" >Register</button>
                     </form>
-                    <button type="submit" class="login-button" id="form_sign" onclick="validationForm();">Login</button>
-                    <div class="line-container">
-                        <hr>
-                        <p class="loginwith">&emsp;&emsp;or login with</p>
-                        <hr>
-                    </div>
-                    <div class="social_network">
-                        <button type="submit" name="login" class="btn-outline-danger">
-                            <img src="/images/google.png">&nbsp;Google
-                        </button>
-                        <button type="submit" name="login" class="btn-outline-primary">
-                            <img src="/images/facebook.png">&nbsp;
-                            Facebook
-                        </button>
-                    </div>
                 </div>
 
                 <div class="login_image">
